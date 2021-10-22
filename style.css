@@ -1,4 +1,3 @@
-
     @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
 
@@ -8,6 +7,7 @@
       font-size: 100%;
       font: inherit;
       vertical-align: baseline;
+      box-sizing: border-box;
     }
 
     .attribution {
@@ -20,7 +20,8 @@
       color: white
     }
 
-    html {
+    html,
+    body {
       min-height: 100vh;
     }
 
@@ -29,21 +30,25 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
       font-size: 12px;
       background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
       font-family: 'Kumbh Sans', sans-serif;
     }
 
     .container {
+      width: 80vw;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       background: white;
       border-radius: 1.5rem;
       box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.8);
-      margin-top: 4rem;
+      margin-top: 8rem;
     }
 
     .questions {
-      width: 280px;
+      width: 100%;
       margin-top: -90px;
       padding: 2rem 1.5rem;
       padding-bottom: 3rem;
@@ -54,26 +59,40 @@
       justify-content: space-between;
       align-items: center;
       padding: 0.5rem 0;
+      font-size: 13px;
+      color: hsl(237, 12%, 33%);
+      cursor: pointer;
+      list-style: none;
     }
+
+    .title:hover {
+      color: hsl(14, 88%, 65%);
+    }
+
+    .title img {
+      margin-left: 1rem;
+    }
+
 
     .img {
       width: 266px;
       height: 196px;
-      background: url("images/illustration-woman-online-mobile.svg")center/ contain no-repeat;
+      background: url("https://raw.githubusercontent.com/Mtc-21/FAQ-Accordion-Card/f4a854d7238f716cdcf20dc062423a4c29478f56/images/illustration-woman-online-mobile.svg")center/ contain no-repeat;
       position: relative;
       top: -110px;
-      right: -10px;
+      margin-right: 5vw;
     }
 
     .img::before {
-      content: url("images/bg-pattern-mobile.svg");
+      content: url("https://raw.githubusercontent.com/Mtc-21/FAQ-Accordion-Card/f4a854d7238f716cdcf20dc062423a4c29478f56/images/bg-pattern-mobile.svg");
       position: absolute;
       top: 110px;
       left: 25px;
     }
 
-    article {
+    .question {
       border-bottom: solid 1px hsl(240, 5%, 91%);
+      padding: 0.5rem 0;
     }
 
     h1 {
@@ -84,42 +103,26 @@
       padding-bottom: 1rem;
     }
 
-    h2 {
-      font-size: 13px;
-      color: hsl(237, 12%, 33%);
-      padding: 0.5rem 0;
-    }
-
-    .title:hover>h2 {
-      color: hsl(14, 88%, 65%);
-    }
-
-    .title {
-      cursor: pointer;
-    }
-
-    .title img {
-      margin-left: 1rem;
-    }
 
     p {
+      width: 95%;
       font-weight: 400;
       line-height: 1.5;
       padding-bottom: 0.8rem;
       color: hsl(240, 6%, 50%);
-      display: none;
     }
 
-    @media (min-width:1440px) {
+    @media (min-width:1200px) {
       .container {
         display: flex;
-        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        justify-content: space-between;
         align-items: center;
         margin-top: 0;
       }
 
       .questions {
-        width: 400px;
+        width: 50%;
         margin-top: 0;
         margin: 1rem 5rem 1rem -0.5rem;
       }
@@ -145,23 +148,29 @@
       .img {
         min-width: 472px;
         min-height: 400px;
-        background: url("images/illustration-woman-online-desktop.svg")center/ contain no-repeat;
+        background: url("https://raw.githubusercontent.com/Mtc-21/FAQ-Accordion-Card/f4a854d7238f716cdcf20dc062423a4c29478f56/images/illustration-woman-online-desktop.svg")center/ contain no-repeat;
         top: 0;
         left: -80px;
         margin: 5em 0;
       }
 
       .img::before {
-        content: url("images/bg-pattern-desktop.svg");
+        content: url("https://raw.githubusercontent.com/Mtc-21/FAQ-Accordion-Card/f4a854d7238f716cdcf20dc062423a4c29478f56/images/bg-pattern-desktop.svg");
         position: absolute;
         top: -350px;
         left: -490px;
       }
 
       .content-header::after {
-        content: url("images/illustration-box-desktop.svg");
+        content: url("https://raw.githubusercontent.com/Mtc-21/FAQ-Accordion-Card/f4a854d7238f716cdcf20dc062423a4c29478f56/images/illustration-box-desktop.svg");
         position: absolute;
         top: 210px;
         left: -90px;
+      }
+    }
+
+    @media (min-width:1500px) {
+      .container {
+        width: 60vw;
       }
     }
