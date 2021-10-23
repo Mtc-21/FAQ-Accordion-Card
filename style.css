@@ -64,6 +64,9 @@
       cursor: pointer;
       list-style: none;
     }
+    .title::-webkit-details-marker {
+      display: none;
+    }
 
     .title:hover {
       color: hsl(14, 88%, 65%);
